@@ -1,7 +1,7 @@
-#ifndef ARRAY_FUNCTIONS_H
-#define ARRAY_FUNCTIONS_H
+#ifndef TREASURE_H
+#define TREASURE_H
 
-//random treasure position
+//random treasure position :)
 
 
 

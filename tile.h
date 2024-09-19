@@ -1,22 +1,37 @@
-#ifndef ARRAY_FUNCTIONS_H
-#define ARRAY_FUNCTIONS_H
+#ifndef TILE_H
+#define TILE_H
+#include <iostream>
+
+enum class TileState // il est jamais content resharper :(
+{
+	kNotDig,
+	kEmpty,
+	kTreasure
+};
 
 
-class tile {public:};
-// 3 etats de case (ENUM)
-//switch (solution[idx])
-//{
-//case 0:
-//	std::cout << " ? ";// not dig 
-//	break;
-//case 1:
-//	std::cout << " X ";// dig but not found
-//	break;
-//case 2:
-//	std::cout << " $ ";// treasure
-//}
+class Tile
+{
 
+public:
+	TileState state_;
 
+	void displayState()
+	{
+		switch (state_)
+		{
+		case TileState::kNotDig:
+			std::cout << " ? "; // Is there something ? :|
+			break;
+		case TileState::kEmpty:
+			std::cout << " x "; // This is empty. :(
+			break;
+		case TileState::kTreasure:
+			std::cout << " $ "; // You found the treasure! :)
+			break;
+		}
+	}
+};
 
 
 #endif

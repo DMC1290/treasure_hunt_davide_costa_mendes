@@ -1,14 +1,18 @@
-#ifndef ARRAY_FUNCTIONS_H
-#define ARRAY_FUNCTIONS_H
+#ifndef MAP_H
+#define MAP_H
+#include <iostream>
+using namespace std;
 
 
 constexpr int kRowSize = 5;
 constexpr int kColSize = 5;
 
-std::array<char, kRowSize* kColSize > map
+std::array<char, kRowSize * kColSize > map
 {
 
 };
 
+//cout << "\t"; :)
+//cout << "\n\n"; :)
 
 #endif
