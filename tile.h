@@ -2,6 +2,7 @@
 #define TILE_H
 #include <iostream>
 
+
 enum class TileState // il est jamais content resharper :(
 {
 	kNotDig,
@@ -14,9 +15,10 @@ class Tile
 {
 
 public:
+
 	TileState state_;
 
-	void displayState()
+	void DisplayState()
 	{
 		switch (state_)
 		{
@@ -31,7 +33,6 @@ public:
 			break;
 		}
 	}
+
 };
-
-
 #endif

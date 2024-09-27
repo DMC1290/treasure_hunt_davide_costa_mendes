@@ -1,11 +1,8 @@
 #ifndef TREASURE_H
 #define TREASURE_H
+#include <random>
 
-//random treasure position :)
-
-
-
-
+int random_number();
 
 
 #endif

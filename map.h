@@ -1,18 +1,19 @@
 #ifndef MAP_H
 #define MAP_H
 #include <iostream>
-using namespace std;
+#include "tile.h"
 
 
 constexpr int kRowSize = 5;
 constexpr int kColSize = 5;
 
-std::array<char, kRowSize * kColSize > map
-{
 
-};
+void displayMap
+(
+	std::array<Tile, kRowSize * kColSize >& map,
+	std::array<bool, kRowSize * kColSize >& treasure_map
+);
 
-//cout << "\t"; :)
-//cout << "\n\n"; :)
+
 
 #endif
