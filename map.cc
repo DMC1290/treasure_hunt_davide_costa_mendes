@@ -3,11 +3,7 @@
 #include <array>
 
 
-void displayMap
-(
-	std::array<Tile, kRowSize * kColSize>& map,
-	std::array<bool, kRowSize * kColSize>& treasure_map
-)
+void displayMap(std::array<Tile, kRowSize* kColSize>& map)
 
 {
 	std::cout << "  ";
@@ -18,7 +14,7 @@ void displayMap
 	}
 
 	std::cout << "\n";
-	
+
 	for (int i = 0; i < kColSize; ++i)
 	{
 		char RowLetter = 'A' + i;
@@ -27,11 +23,6 @@ void displayMap
 		for (int j = 0; j < kColSize; ++j)
 		{
 			int idx = i * kColSize + j;
-			if (treasure_map[idx])
-			{
-				map[idx].state_ = TileState::kTreasure;
-			}
-
 			map[idx].DisplayState();
 			std::cout << "\t";
 		}

@@ -33,6 +33,5 @@ public:
 			break;
 		}
 	}
-
 };
 #endif

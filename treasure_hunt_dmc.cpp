@@ -8,16 +8,13 @@
 int main()
 {
 	std::array<Tile, kRowSize* kColSize> map{};
-	std::array<bool, kRowSize* kColSize> treasure_map{};
 
 	for (int idx = 0; idx < kRowSize * kColSize; ++idx)
 	{
 		map[idx].state_ = TileState::kNotDig;
-		treasure_map[idx] = false;
 	}
 
 	int treasureIndex = random_number();
-	treasure_map[treasureIndex] = true;
 
 	while (true)
 	{
@@ -39,21 +36,27 @@ int main()
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 
-		int idx = (row -1) * kColSize + (col - 1);
+		int idx = (row - 1) * kColSize + (col - 1);
 
-		if (treasure_map[idx])
+		if (idx == treasureIndex)
 		{
 			map[idx].state_ = TileState::kTreasure;
 			std::cout << "You found the treasure!" << '\n';
+
+			displayMap(map);
+
+			return EXIT_SUCCESS;
+
 		}
 		else
 		{
 			map[idx].state_ = TileState::kEmpty;
 			std::cout << "Try again :)" << '\n';
+
+			displayMap(map);
+
 		}
 
-		std::cout << '\n';
-		displayMap(map, treasure_map);
 
 		char playAgain;
 		std::cout << "Play again ? (y/n): ";
@@ -63,23 +66,8 @@ int main()
 		{
 			break;
 		}
-		else if (playAgain == 'y')
-		{
-			return main();
-		}
-
-		else
-		{
-			std::cout << "What are you tryng to do?";
-
-			return playAgain;
-		}
-
 
 	}
-
-	std::cout << '\n';
-	displayMap(map, treasure_map);
 
 	return 0;
 }
